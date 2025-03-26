@@ -6,6 +6,6 @@ Adopts Swift 6 concurrency.
 
 Screenshots:
 
-<img src=ihttps://github.com/jemui/tip-app/blob/main/TipApp/TipApp/Screenshots/Start.png" width="300"/>
+<img src="https://github.com/jemui/tip-app/blob/main/TipApp/TipApp/Screenshots/Start.png" width="300"/>
 
 ![GitHub Logo](https://github.com/jemui/tip-app/blob/main/TipApp/TipApp/Screenshots/Start.png)
