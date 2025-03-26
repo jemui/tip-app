@@ -35,7 +35,7 @@ class BillViewController: UIViewController, UITextFieldDelegate {
         currentButton = buttonOne
         
         let calculateUIButton = ButtonFactory.createButton(title: "Calculate")
-        calculateUIButton.backgroundColor = .lightGray
+        calculateUIButton.backgroundColor = Constants.calculateButtonColor
         calculateUIButton.setTitleColor(.black, for: .normal)
         calculateUIButton.addTarget(self, action: #selector(calculatePressed), for: .touchUpInside)
         
@@ -99,9 +99,10 @@ class BillViewController: UIViewController, UITextFieldDelegate {
             tipPercentageButtonStackView.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
             
             chooseSplitStackView.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
-            chooseSplitStackView.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor)
+            chooseSplitStackView.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
+           
         ])
-        
+
         NSLayoutConstraint.activate([
             billStackView.topAnchor.constraint(equalTo: safeArea.topAnchor),
             billStackView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
@@ -125,8 +126,10 @@ class BillViewController: UIViewController, UITextFieldDelegate {
         
         NSLayoutConstraint.activate([
             selectTipStackView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
-            selectTipStackView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor)
+            selectTipStackView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
+            selectTipStackView.topAnchor.constraint(equalTo: enterBillTotalTextField.bottomAnchor, constant: 30),
         ])
+        
         
         setupActions()
     }
@@ -166,7 +169,6 @@ class BillViewController: UIViewController, UITextFieldDelegate {
     private func createGradientBG() -> CAGradientLayer {
         let gradientLayer = CAGradientLayer()
         
-        //
         gradientLayer.colors = [
             Constants.topGradientColor.cgColor,
             Constants.bottomGradientColor.cgColor
@@ -308,11 +310,12 @@ class BillViewController: UIViewController, UITextFieldDelegate {
     private let chooseSplitStackView: UIStackView = {
         let chooseSplitStackView = UIStackView()
         chooseSplitStackView.axis = .horizontal
-        chooseSplitStackView.backgroundColor = .cyan
-        
+        chooseSplitStackView.backgroundColor = Constants.topGradientColor
+       
         chooseSplitStackView.alignment = .center
         chooseSplitStackView.distribution = .fillEqually
-        
+        chooseSplitStackView.layer.cornerRadius = 15
+        chooseSplitStackView.heightAnchor.constraint(equalToConstant: 75).isActive = true
         return chooseSplitStackView
     }()
     
@@ -342,7 +345,7 @@ class BillViewController: UIViewController, UITextFieldDelegate {
     private let enterBillTotalTextField: NonPastingTextField = {
         let enterBillTotalTextField = NonPastingTextField()
         enterBillTotalTextField.placeholder = "e.g 123.56"
-        enterBillTotalTextField.backgroundColor = .gray
+        enterBillTotalTextField.backgroundColor = Constants.textFieldColor
         enterBillTotalTextField.textAlignment = .center
         enterBillTotalTextField.keyboardType = .decimalPad
         
