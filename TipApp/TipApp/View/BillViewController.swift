@@ -48,9 +48,7 @@ class BillViewController: UIViewController, UITextFieldDelegate {
         selectTipLabel.textAlignment = .left
     
 //        view.backgroundColor = .white
-        let gradientLayer = createGradientBG()
-        
-        // Add the gradient layer to the view's layer
+        let gradientLayer = Utility.createGradientBG(view: view)
         view.layer.insertSublayer(gradientLayer, at: 0)
         
         
@@ -166,24 +164,6 @@ class BillViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    private func createGradientBG() -> CAGradientLayer {
-        let gradientLayer = CAGradientLayer()
-        
-        gradientLayer.colors = [
-            Constants.topGradientColor.cgColor,
-            Constants.bottomGradientColor.cgColor
-        ]
-        
-        // Set the gradient direction (you can adjust this)
-        gradientLayer.startPoint = CGPoint(x: 0, y: 0) // Top-left
-        gradientLayer.endPoint = CGPoint(x: 0, y: 1)   // Bottom-right
-        
-        // Set the frame of the gradient layer to match the view's bounds
-        gradientLayer.frame = view.bounds
-        
-        return gradientLayer
-    }
-    
     @objc private func calculatePressed() {
         print("pressed")
         //create instance of view controller
@@ -266,10 +246,10 @@ class BillViewController: UIViewController, UITextFieldDelegate {
 
     private func updateUIForSelectedButton(_ sender: UIButton) {
         currentButton.backgroundColor = .clear
-        currentButton.setTitleColor(.green, for: .normal)
+        currentButton.setTitleColor(Constants.tipColor, for: .normal)
         
         for button in buttonArray where button == sender {
-            button.backgroundColor = .green
+            button.backgroundColor = Constants.tipColor
             button.setTitleColor(.white, for: .normal)
             currentButton = button
         }
@@ -348,7 +328,7 @@ class BillViewController: UIViewController, UITextFieldDelegate {
         enterBillTotalTextField.backgroundColor = Constants.textFieldColor
         enterBillTotalTextField.textAlignment = .center
         enterBillTotalTextField.keyboardType = .decimalPad
-        
+        enterBillTotalTextField.tintColor = Constants.bottomGradientColor
         
         
         return enterBillTotalTextField

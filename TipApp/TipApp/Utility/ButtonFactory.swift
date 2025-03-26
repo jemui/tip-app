@@ -20,7 +20,7 @@ class ButtonFactory {
         
         button.backgroundColor = .clear
         button.setTitleColor(.blue, for: .selected)
-        button.setTitleColor(.green, for: .normal)
+        button.setTitleColor(Constants.tipColor, for: .normal)
         
         return button
     }

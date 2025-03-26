@@ -27,7 +27,9 @@ class ResultViewController: UIViewController {
     
     private func setupView() {
 
-        view.backgroundColor = .white
+//        view.backgroundColor = .white
+        let gradientLayer = Utility.createGradientBG(view: view)
+        view.layer.insertSublayer(gradientLayer, at: 0)
         
         totalPerPersonLabel.text = String(totalPerPersonValue)
         splitBetweenPeopleLabel.text = splitBetweenPeopleText
@@ -44,8 +46,8 @@ class ResultViewController: UIViewController {
 
         
         recalculateButton.addTarget(self, action: #selector(dismissView), for: .touchUpInside)
-        recalculateButton.backgroundColor = .green
-        recalculateButton.setTitleColor(.white, for: .normal)
+        recalculateButton.backgroundColor = Constants.calculateButtonColor
+        recalculateButton.setTitleColor(.black, for: .normal)
         
         totalPerPersonLabel.translatesAutoresizingMaskIntoConstraints = false
         splitBetweenPeopleLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -58,9 +60,13 @@ class ResultViewController: UIViewController {
         NSLayoutConstraint.activate([
             recalculateButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             recalculateButton.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor),
-            totalPerPersonLabel.topAnchor.constraint(equalTo: safeArea.topAnchor),
+            recalculateButton.widthAnchor.constraint(equalToConstant: 130),
+            recalculateButton.heightAnchor.constraint(equalToConstant: 50),
+            totalPerPersonLabel.leftAnchor.constraint(equalTo: safeArea.leftAnchor, constant: 10),
+            totalPerPersonLabel.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 30),
             totalPerPersonValueLabel.topAnchor.constraint(equalTo: totalPerPersonLabel.bottomAnchor),
-            splitBetweenPeopleLabel.topAnchor.constraint(equalTo: totalPerPersonValueLabel.bottomAnchor)
+            splitBetweenPeopleLabel.topAnchor.constraint(equalTo: totalPerPersonValueLabel.bottomAnchor),
+            splitBetweenPeopleLabel.leftAnchor.constraint(equalTo: safeArea.leftAnchor, constant: 10),
             
         ])
     }
