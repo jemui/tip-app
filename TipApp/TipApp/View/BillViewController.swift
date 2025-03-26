@@ -314,7 +314,6 @@ class BillViewController: UIViewController, UITextFieldDelegate {
         billStackView.axis = .vertical
 //        billStackView.backgroundColor = Constants.enterBillTotalColor
         
-        
         billStackView.alignment = .leading
         billStackView.distribution = .fillProportionally
         billStackView.spacing = 0
