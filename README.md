@@ -5,7 +5,8 @@ Bill total is entered into a text field, tips are selectable buttons, and split 
 Adopts Swift 6 concurrency.
 
 Screenshots:
+Start, Input, Result
 
-<img src="https://github.com/jemui/tip-app/blob/main/TipApp/TipApp/Screenshots/Start.png" width="300"/>
-
-![GitHub Logo](https://github.com/jemui/tip-app/blob/main/TipApp/TipApp/Screenshots/Start.png)
+<img src="https://github.com/jemui/tip-app/blob/main/TipApp/TipApp/Screenshots/Start.png" width="250"/>
+<img src="https://github.com/jemui/tip-app/blob/main/TipApp/TipApp/Screenshots/Input.png" width="250"/>
+<img src="https://github.com/jemui/tip-app/blob/main/TipApp/TipApp/Screenshots/Result.png" width="250"/>
