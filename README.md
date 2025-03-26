@@ -7,6 +7,8 @@ Adopts Swift 6 concurrency.
 Screenshots:
 Start, Input, Result
 
-<img src="https://github.com/jemui/tip-app/blob/main/TipApp/TipApp/Screenshots/Start.png" width="250"/>
-<img src="https://github.com/jemui/tip-app/blob/main/TipApp/TipApp/Screenshots/Input.png" width="250"/>
-<img src="https://github.com/jemui/tip-app/blob/main/TipApp/TipApp/Screenshots/Result.png" width="250"/>
+<div style="overflow: hidden;">
+    <img src="https://github.com/jemui/tip-app/blob/main/TipApp/TipApp/Screenshots/Start.png" width="250"/>
+    <img src="https://github.com/jemui/tip-app/blob/main/TipApp/TipApp/Screenshots/Input.png" width="250"/>
+    <img src="https://github.com/jemui/tip-app/blob/main/TipApp/TipApp/Screenshots/Result.png" width="250"/>
+</div>
